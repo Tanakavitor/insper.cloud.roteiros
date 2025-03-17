@@ -1,63 +1,95 @@
-## Objetivo
+# Roteiro 1 - Computação em Nuvem
+Membros: Ian Faray e Vitor Tanaka
 
-Aqui vai o objetivo macro do roteiro. Por que estamos fazendo o que estamos fazendo?
+## Objetivo
+Este roteiro tem como objetico de explicar nosso processo de  criação de uma infraestrutura de Nuvem Bare-metal. Utilizando um ambiente com cinco máquinas, sendo realizadas as seguintes implementações: um servidor PostgreSQL, aplicação Django distribuídas em dois servidores para hospedagem das aplicações web e a configuração de um servidor Nginx para balanceamento de carga, distribuindo as requisições entre as aplicações
 
 ## Montagem do Roteiro
 
-Os pontos "tarefas" são os passos que devem ser seguidos para a realização do roteiro. Eles devem ser claros e objetivos. Com evidências claras de que foram realizados.
+### Infraestrutura
+Inicialmente, criamos a infraestrutura de Nuvem Bare-metal. Instalamos o Ubuntu na NUC principal, seguido do MAAS, configurando autenticação com um par de chaves. Em seguida, adicionamos os demais servidores ao MAAS e criamos a OVS Bridge
 
+### Aplicação
+Primeiramente No server1 foi instalado o postgresql
 ### Tarefa 1
+![1](img/tarefa1-1.jpeg)
+*Tarefa 1.1*
 
-Instalando o MAAS:
+![2](img/tarefa1-2.jpeg)
+*Tarefa 1.2*
 
-<!-- termynal -->
+![3](img/tarefa1-3.jpeg)
+*Tarefa 1.3*
 
-``` bash
-sudo snap install maas --channel=3.5/Stable
-```
+![4](img/tarefa1-4.jpeg)
+*Tarefa 1.4*
 
-![Tela do Dashboard do MAAS](./maas.png)
-/// caption
-Dashboard do MAAS
-///
-
-Conforme ilustrado acima, a tela inicial do MAAS apresenta um dashboard com informações sobre o estado atual dos servidores gerenciados. O dashboard é composto por diversos painéis, cada um exibindo informações sobre um aspecto específico do ambiente gerenciado. Os painéis podem ser configurados e personalizados de acordo com as necessidades do usuário.
-
+### Parte II: Aplicação Django
+No segundo servidor, implantamos uma aplicação Django já desenvolvida
 ### Tarefa 2
 
-## App
+![1](img/tarefa2.1.jpeg)
+*Tarefa 2.1*
+
+![2](img/tarefa2.2.jpeg)
+*Tarefa 2.2*
+
+![3](img/tarefa2.3-1.jpeg)
+*Tarefa 2.3-1*
+
+![4](img/tarefa2.3-2.jpeg)
+*Tarefa 2.3-2*
+
+![5](img/tarefa2.3-3.jpeg)
+*Tarefa 2.3-3*
+
+![6](img/tarefa2.3-4.jpeg)
+*Tarefa 2.3-4*
+
+![7](img/tarefa2.3-5.jpeg)
+*Tarefa 2.3-5*
 
 
+### Utilizando o Ansible - deploy automatizado de aplicação
+### Tarefa 3
 
-### Tarefa 1
+![aa](img/tarefa3-1.jpeg)
+*Tarefa 3.1*
 
-### Tarefa 2
+![bb](img/tarefa3-2.jpeg)
+*Tarefa 3.2*
 
-Exemplo de diagrama
+tarefa 3.3: 
+A implementação manual da aplicação Django e do banco de dados foi realizada com um script (install.sh) que automatiza a instalação de dependências, a migração do banco de dados e a criação de um superusuário. O ambiente foi configurado instalando pacotes essenciais (python3-dev, libpq-dev, python3-pip) e instalando as bibliotecas necessárias via pip. Em seguida, aplicamos as migrações do banco de dados com python3 manage.py migrate. Para garantir a inicialização automática, adicionamos um comando ao crontab que executa o script de inicialização (run.sh) no reboot. O superusuário foi criado definindo variáveis de ambiente e executando python3 manage.py createsuperuser --noinput. A aplicação roda na porta 8080 e pode ser acessada via http://[IP server2]:8080/admin/. Para permitir acesso externo, configuramos um túnel SSH redirecionando a porta 8080 do servidor remoto para a porta 8001 loca
 
-```mermaid
-architecture-beta
-    group api(cloud)[API]
+### Ansible
+Utilizamos o Ansible para fazermos deploy da aplicação Django no nosso caso escolhemos o server 4
+### Tarefa 4
+![tarefa4-1](img/tarefa4.1.jpeg)
+*Tarefa 4.1*
 
-    service db(database)[Database] in api
-    service disk1(disk)[Storage] in api
-    service disk2(disk)[Storage] in api
-    service server(server)[Server] in api
+![tarefa4-2](img/tarefa4.2.jpeg)
+*Tarefa 4.2*
 
-    db:L -- R:server
-    disk1:T -- B:server
-    disk2:T -- B:db
-```
+![tarefa4-3](img/tarefa4-3.jpeg)
+*Tarefa 4.3*
+Tarefa 4.4:A instalação manual de uma aplicação Django é demorada, propensa a erros e difícil de replicar, exigindo a execução manual de comandos em cada servidor, sem garantia de idempotência. Já com o Ansible, todo o processo é automatizado através de playbooks, garantindo eficiência, repetibilidade e consistência entre servidores. O Ansible permite gerenciar múltiplos servidores simultaneamente, evitar erros manuais e documentar todo o processo. No seu caso, o playbook tasks-install-playbook.yaml foi utilizado para instalar Django no server3, garantindo a instalação de dependências, a configuração do banco de dados, a criação do superusuário e a configuração da inicialização automática
 
-[Mermaid](https://mermaid.js.org/syntax/architecture.html){:target="_blank"}
+### Tarefa 5
+![tarefa5-1](img/tarefa5-1.jpeg)
+*Tarefa 5.1*
 
-## Questionário, Projeto ou Plano
+![tarefa5.2-1](img/tarefa5.2-1.jpeg)
+*Tarefa 5.2-1*
 
-Esse seção deve ser preenchida apenas se houver demanda do roteiro.
+![tarefa5.2-2](img/tarefa5.2-2.jpeg)
+*Tarefa 5.2-2*
+
+
 
 ## Discussões
 
-Quais as dificuldades encontradas? O que foi mais fácil? O que foi mais difícil?
+As maiores dificuldades encontradas foram os erros ao tentar baixar aplicações e alterar as configurações necessárias para que funcionassem corretamente e sem erros.
 
 ## Conclusão
 
