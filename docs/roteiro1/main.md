@@ -92,5 +92,4 @@ Tarefa 4.4:A instalação manual de uma aplicação Django é demorada, propensa
 As maiores dificuldades encontradas foram os erros ao tentar baixar aplicações e alterar as configurações necessárias para que funcionassem corretamente e sem erros.
 
 ## Conclusão
-
-O que foi possível concluir com a realização do roteiro?
+A realização do roteiro permitiu compreender os conceitos fundamentais de redes e sub-redes, além do funcionamento de uma nuvem. Também foi possível explorar ferramentas de gerenciamento e outras que facilitam a implementação e o deployment de aplicações.
