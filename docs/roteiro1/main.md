@@ -89,7 +89,9 @@ Utilizamos o Ansible para fazermos deploy da aplicação Django. No nosso caso, 
 ![tarefa4-3](img/tarefa4-3.jpeg)
 *Tarefa 4.3 print da aplicacao Django, provando que voce está conectado ao server3(4) no nosso caso*
 
-Tarefa 4.4:A instalação manual de uma aplicação Django é demorada, propensa a erros e difícil de replicar, exigindo a execução manual de comandos em cada servidor, sem garantia de idempotência. Já com o Ansible, todo o processo é automatizado através de playbooks, garantindo eficiência, repetibilidade e consistência entre servidores. O Ansible permite gerenciar múltiplos servidores simultaneamente, evitar erros manuais e documentar todo o processo. o playbook tasks-install-playbook.yaml foi utilizado para instalar Django no server4, garantindo a instalação de dependências, a configuração do banco de dados, a criação do superusuário e a configuração da inicialização automática
+Tarefa 4.4:A grande diferença é que o Ansible permite automatizar a instalação e configuração do Django, enquanto a instalação manual exige que cada etapa seja realizada individualmente. Com o Ansible, utilizamos um playbook que contém todos os scripts necessários para definir e executar as instruções de instalação e configuração do Django.
+Na instalação manual, é preciso realizar cada passo manualmente, como clonar o repositório e ajustar configurações, o que pode ser mais demorado e propenso a erros. Já com o Ansible, há um script padronizado que não só agiliza o processo, mas também facilita para escalonar o projeto caso necessário
+
 
 ### Tarefa 5
 ![tarefa5-1](img/tarefa5-1.jpeg)
