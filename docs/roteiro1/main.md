@@ -75,7 +75,9 @@ No segundo servidor, assim como no primeiro, realizamos o deploy do Ubuntu, por�
 *Tarefa 3.2 print da aplicacao Django, provando que voce está conectado ao server*
 
 tarefa 3.3: 
-A implementação manual da aplicação Django e do banco de dados foi realizada com um script (install.sh) que automatiza a instalação de dependências, a migração do banco de dados e a criação de um superusuário. O ambiente foi configurado instalando pacotes essenciais (python3-dev, libpq-dev, python3-pip) e instalando as bibliotecas necessárias via pip. Em seguida, aplicamos as migrações do banco de dados com python3 manage.py migrate. Para garantir a inicialização automática, adicionamos um comando ao crontab que executa o script de inicialização (run.sh) no reboot. O superusuário foi criado definindo variáveis de ambiente e executando python3 manage.py createsuperuser --noinput. A aplicação roda na porta 8080. Para permitir acesso externo, configuramos um túnel SSH redirecionando a porta 8080 do servidor remoto para a porta 8001 local.
+A implementação manual do banco de dados no servidor 1 foi realizada via terminal, começando com a instalação do PostgreSQL. Em seguida, foi criado um superusuário e uma base de dados, além de configurar o banco para aceitar conexões de qualquer máquina dentro da nossa sub-rede.
+Para a aplicação Django no servidor 2, clonamos um repositório que já continha o código da aplicação e utilizamos um script (install.sh). Esse script instalava automaticamente todas as dependências necessárias, realizava a migração do banco de dados e configurava outro script para garantir que o servidor fosse iniciado automaticamente após um reboot. A aplicação foi configurada para rodar na porta 8080, e também foi criado um superusuário para acesso ao Django Admin.
+Para conseguirmos testar a aplicação Django rodando no nosso computador, configuramos um túnel SSH redirecionando a porta 8080 do servidor remoto para a porta 8001 local.
 
 ### Ansible
 Utilizamos o Ansible para fazermos deploy da aplicação Django. No nosso caso, escolhemos o server 4.
