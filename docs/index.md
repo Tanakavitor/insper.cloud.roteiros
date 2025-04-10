@@ -16,7 +16,7 @@ Vitor Tanaka
 ## Entregas
 
 - [x] Roteiro 1 - Data 17/03/2025
-- [ ] Roteiro 2
+- [x] Roteiro 2
 - [ ] Roteiro 3
 - [ ] Roteiro 4
 - [ ] Projeto
