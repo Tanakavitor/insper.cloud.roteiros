@@ -193,7 +193,7 @@ Este roteiro tem como objetivo a implementação de um ambiente de nuvem privada
   juju add-unit --to <id do node2> ceph-osd
   ```
 #### Tarefa 3
- ``` mermaid
+``` mermaid
 graph TD
     A[Seu computador] -- 10.0.0.0/8 --> B[Roteador Insper]
     B -- 172.16.0.0/20 --> C[OpenStack Controller main]
