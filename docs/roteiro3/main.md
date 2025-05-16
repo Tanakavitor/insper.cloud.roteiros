@@ -129,7 +129,7 @@ Este roteiro tem como objetivo a implementação de um ambiente de nuvem privada
    ext_subnet
  ```
 
- ### Passo 5 - Rede Interna  e  Roteador
+### Passo 5 - Rede Interna  e  Roteador
  - Nessa etapa, configuramos a rede interna da nuvem, com a subnet ```192.169.0.0/24```, e o roteador.
  ```
  openstack network create --internal user1_net
@@ -144,14 +144,14 @@ Este roteiro tem como objetivo a implementação de um ambiente de nuvem privada
  openstack router add subnet user1_router user1_subnet
  openstack router set user1_router --external-gateway ext_net
  ```
- ### Passo 6 - Conexão
+### Passo 6 - Conexão
  - Primeiramente, importamos a chave pública já gerada anteriormente para o MAAS, para que possamos acessar as VMs via SSH.
   ```
   openstack keypair create --public-key ~/.ssh/id_rsa.pub user1
   ```
  - Em seguida, usando o Horizon, adicionamos a liberação do SSH e ALL ICMP no Security Group, para que possamos acessar as VMs e fazer ping. 
 
- ### Passo 7 - Instância
+### Passo 7 - Instância
  - Com tudo configurado, criamos uma instância com o flavor m1.tiny.
   ```
   openstack server create --flavor m1.tiny --image jammy-amd64 \
@@ -168,7 +168,7 @@ Este roteiro tem como objetivo a implementação de um ambiente de nuvem privada
   ssh ubuntu@<floating_ip>
   ```
 
-  #### Tarefa 2
+#### Tarefa 2
   ![6](img/2a.jpg)
     *1 - Print do Dashboard do MAAS com as máquinas*
 
@@ -184,7 +184,7 @@ Este roteiro tem como objetivo a implementação de um ambiente de nuvem privada
   - As diferenças encontradas entre os prints da tarefa 1 e tarefa 2 são simplesmente o resultado da execução dos comandos de configuração do OpenStack. O dashboard do MAAS não mudou, já que tivemos problemas com o server3 e, portanto, adicionamos o nó reserva (node2) na parte de instalação antes da etapa de escalonamento de nós. A aba compute overview nos mostra uma visão geral, com todos os recursos adicionados no setup. Já a aba compute instances mostra a instância jammy1 criada. Por fim, a aba network topology mostra a rede interna e externa criadas, com o roteador e as subnets, todas criadas no setup.
   - Todos os recursos foram criados pela CLI do OpenStack, em que instalamos o openstackclient no começo da etapa.
 
-  ### Escalando os nós
+### Escalando os nós
   - Como dito anteriormente, o server3 apresentou problemas, então realizamos esta etapa antes do setup com os seguintes comandos:
   ```
   juju add-unit nova-compute
@@ -192,7 +192,7 @@ Este roteiro tem como objetivo a implementação de um ambiente de nuvem privada
   ```
   juju add-unit --to <id do node2> ceph-osd
   ```
- #### Tarefa 3
+#### Tarefa 3
  ``` mermaid
 graph TD
     A[Seu computador] -- 10.0.0.0/8 --> B[Roteador Insper]
