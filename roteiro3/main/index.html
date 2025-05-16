@@ -575,6 +575,72 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#passo-5-rede-interna-e-roteador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 5 - Rede Interna e Roteador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-6-conexao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 6 - Conexão
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-7-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 7 - Instância
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passo 7 - Instância">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tarefa-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarefa 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalando-os-nos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escalando os nós
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Escalando os nós">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tarefa-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarefa 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -816,6 +882,72 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#passo-5-rede-interna-e-roteador" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 5 - Rede Interna e Roteador
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-6-conexao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 6 - Conexão
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passo-7-instancia" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passo 7 - Instância
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Passo 7 - Instância">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tarefa-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarefa 2
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escalando-os-nos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escalando os nós
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Escalando os nós">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tarefa-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tarefa 3
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1024,8 +1156,9 @@
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>  ext_subnet
 </span></code></pre></div></li>
 </ul>
-<p>### Passo 5 - Rede Interna  e  Roteador
- - Nessa etapa, configuramos a rede interna da nuvem, com a subnet <code>192.169.0.0/24</code>, e o roteador.
+<h3 id="passo-5-rede-interna-e-roteador">Passo 5 - Rede Interna  e  Roteador</h3>
+<ul>
+<li>Nessa etapa, configuramos a rede interna da nuvem, com a subnet <code>192.169.0.0/24</code>, e o roteador.
  <div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>openstack network create --internal user1_net
 </span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
 </span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>openstack subnet create --network user1_net \
@@ -1036,27 +1169,32 @@
  <div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>openstack router create user1_router
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>openstack router add subnet user1_router user1_subnet
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>openstack router set user1_router --external-gateway ext_net
-</span></code></pre></div>
- ### Passo 6 - Conexão
- - Primeiramente, importamos a chave pública já gerada anteriormente para o MAAS, para que possamos acessar as VMs via SSH.
+</span></code></pre></div></li>
+</ul>
+<h3 id="passo-6-conexao">Passo 6 - Conexão</h3>
+<ul>
+<li>Primeiramente, importamos a chave pública já gerada anteriormente para o MAAS, para que possamos acessar as VMs via SSH.
   <div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>openstack keypair create --public-key ~/.ssh/id_rsa.pub user1
-</span></code></pre></div>
- - Em seguida, usando o Horizon, adicionamos a liberação do SSH e ALL ICMP no Security Group, para que possamos acessar as VMs e fazer ping. </p>
-<p>### Passo 7 - Instância
- - Com tudo configurado, criamos uma instância com o flavor m1.tiny.
+</span></code></pre></div></li>
+<li>Em seguida, usando o Horizon, adicionamos a liberação do SSH e ALL ICMP no Security Group, para que possamos acessar as VMs e fazer ping. </li>
+</ul>
+<h3 id="passo-7-instancia">Passo 7 - Instância</h3>
+<ul>
+<li>Com tudo configurado, criamos uma instância com o flavor m1.tiny.
   <div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>openstack server create --flavor m1.tiny --image jammy-amd64 \
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  --key-name user1 --network user1_net --security-group default \
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>  jammy-1
-</span></code></pre></div>
-  - Após isso, alocamos um floating IP para a instância.
+</span></code></pre></div></li>
+<li>Após isso, alocamos um floating IP para a instância.
   <div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>FLOATING_IP=$(openstack floating ip create -f value -c floating_ip_address ext_net)
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>openstack server add floating ip jammy-1 $FLOATING_IP
-</span></code></pre></div>
-  - Com isso, conseguimos acessar a instância via SSH, usando o IP flutuante.
+</span></code></pre></div></li>
+<li>Com isso, conseguimos acessar a instância via SSH, usando o IP flutuante.
   <div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>ssh ubuntu@&lt;floating_ip&gt;
-</span></code></pre></div></p>
-<p>#### Tarefa 2
-  <a class="glightbox" href="../img/2a.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="6" src="../img/2a.jpg" /></a>
+</span></code></pre></div></li>
+</ul>
+<h4 id="tarefa-2">Tarefa 2</h4>
+<p><a class="glightbox" href="../img/2a.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="6" src="../img/2a.jpg" /></a>
     <em>1 - Print do Dashboard do MAAS com as máquinas</em></p>
 <p><a class="glightbox" href="../img/2b.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="7" src="../img/2b.jpg" /></a>
     <em>2 - Print da aba compute overview no OpenStack Dashboard</em></p>
@@ -1068,14 +1206,16 @@
 <li>As diferenças encontradas entre os prints da tarefa 1 e tarefa 2 são simplesmente o resultado da execução dos comandos de configuração do OpenStack. O dashboard do MAAS não mudou, já que tivemos problemas com o server3 e, portanto, adicionamos o nó reserva (node2) na parte de instalação antes da etapa de escalonamento de nós. A aba compute overview nos mostra uma visão geral, com todos os recursos adicionados no setup. Já a aba compute instances mostra a instância jammy1 criada. Por fim, a aba network topology mostra a rede interna e externa criadas, com o roteador e as subnets, todas criadas no setup.</li>
 <li>Todos os recursos foram criados pela CLI do OpenStack, em que instalamos o openstackclient no começo da etapa.</li>
 </ul>
-<p>### Escalando os nós
-  - Como dito anteriormente, o server3 apresentou problemas, então realizamos esta etapa antes do setup com os seguintes comandos:
+<h3 id="escalando-os-nos">Escalando os nós</h3>
+<ul>
+<li>Como dito anteriormente, o server3 apresentou problemas, então realizamos esta etapa antes do setup com os seguintes comandos:
   <div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>juju add-unit nova-compute
 </span></code></pre></div>
   <div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>juju add-unit --to &lt;id do node2&gt; ceph-osd
-</span></code></pre></div>
- #### Tarefa 3
- <code>mermaid
+</span></code></pre></div></li>
+</ul>
+<h4 id="tarefa-3">Tarefa 3</h4>
+<p><code>mermaid
 graph TD
     A[Seu computador] -- 10.0.0.0/8 --&gt; B[Roteador Insper]
     B -- 172.16.0.0/20 --&gt; C[OpenStack Controller main]
