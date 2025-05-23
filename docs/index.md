@@ -17,9 +17,9 @@ Vitor Tanaka
 
 - [x] Roteiro 1 - Data 17/03/2025
 - [x] Roteiro 2
-- [ ] Roteiro 3
-- [ ] Roteiro 4
-- [ ] Projeto
+- [x] Roteiro 3
+- [x] Roteiro 4
+- [In progress ] Projeto
 
 
 ## Referências
