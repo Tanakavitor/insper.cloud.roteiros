@@ -204,7 +204,7 @@ Além disso, o time de DevOps atua na criação de pipelines de integração con
   Implantação de **ferramentas de monitoramento proativo** (físico e virtual) que detectem falhas, anomalias de desempenho e possíveis ataques, possibilitando uma **resposta rápida e eficiente** antes que o problema se agrave.
 
 - **Escalonamento à disposição:**  
-  Manter um plano de escalonamento e máquinas reservas prontas para serem ativadas conforme a demanda. Dessa forma, é possível aumentar rapidamente a capacidade da aplicação ou substituir nós em caso de falha, garantindo a continuidade dos serviços sem interrupções.
+  Manter um plano de escalonamento com máquinas reservas localizadas em diferentes regiões, prontas para serem ativadas conforme a demanda. Assim, é possível aumentar rapidamente a capacidade da aplicação ou substituir nós em caso de falha ou indisponibilidade, garantindo a continuidade dos serviços sem interrupções.
 
 ## Política de Backup
 Iriamos realizar backups diarios em horarios predeterminados, em localizações geograficamente com uma distancia minima de 100km dos servidores atuais
