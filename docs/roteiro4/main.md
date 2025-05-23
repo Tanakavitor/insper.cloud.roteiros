@@ -153,5 +153,69 @@ terraform apply
 
 
 
+## Criando um Plano de Disaster Recovery e SLA
+
+### Cenário: Você é o CTO de uma grande empresa com sede em várias capitais no Brasil e precisa implantar um sistema crítico, de baixo custo e com dados sigilosos para a área operacional.
+
+**Resposta:**  
+Optaríamos por implementar um sistema em cloud pública, pois inicialmente apresenta um custo mais baixo, já que não há necessidade de adquirir e manter servidores próprios. Além disso, provedores de cloud pública já oferecem garantias de segurança, escalabilidade e disponibilidade, atendendo aos requisitos de proteção dos dados sigilosos e operação eficiente.
+
+---
+
+### Explique para o RH por que você precisa de um time de DevOps.
+
+**Resposta:**  
+É fundamental contar com um time de DevOps, pois esses profissionais garantem a integração eficaz entre as áreas de desenvolvimento e operações. Em ambientes de computação em nuvem, a equipe de DevOps é responsável pela criação e manutenção da infraestrutura, além da gestão dos ambientes de desenvolvimento, utilizando ferramentas modernas como IaC (Infraestrutura como Código) para garantir ambientes escaláveis, seguros e padronizados.
+
+Além disso, o time de DevOps atua na criação de pipelines de integração contínua, organização e gerenciamento de containers, integração eficiente de sistemas e monitoramento constante da infraestrutura, permitindo identificar e resolver falhas rapidamente, o que contribui diretamente para a agilidade e confiabilidade dos processos da empresa.
 
 
+
+
+# Plano de Continuidade e Alta Disponibilidade (DR e HA)
+
+## Mapeamento de Ameaças
+
+### Ameaças Físicas
+
+- **Falhas de hardware:** Defeitos em componentes físicos, como servidores ou discos rígidos, podem causar **interrupções no serviço**, perda de dados e comprometimento da integridade do sistema.
+
+- **Desastres naturais:** Eventos como **inundações, incêndios, terremotos, tsunamis ou erupções vulcânicas** podem danificar fisicamente os datacenters e equipamentos de rede e servidores, gerando **indisponibilidade total da infraestrutura**, perda de dados e falhas no fornecimento de energia.
+
+- **Acesso físico não autorizado:** Invasões ou acesso indevido aos servidores podem resultar em **danos físicos, destruição de equipamentos e roubo de dados confidenciais**, além de abrir brechas para **ataques futuros**.
+
+### Ameaças Lógicas
+
+- **Ataques cibernéticos:** Ações como **DDoS, injeções de SQL, phishing** e malwares representam riscos severos à **disponibilidade, integridade e confidencialidade** do sistema e dos dados armazenados.
+
+---
+
+## Ações Prioritárias para Recuperação em Caso de Desastres
+
+- **Backups de dados:**  
+  Realização de **backups regulares e automáticos**, armazenados em **locais seguros, criptografados e geograficamente distantes (mínimo de 100 km)** do datacenter principal, garantindo proteção contra desastres físicos de grande escala.
+
+- **Balanceamento de carga (Load Balancer):**  
+  Implementação de **balanceadores de carga** para distribuir o tráfego de forma inteligente entre múltiplos servidores, prevenindo sobrecarga e mantendo o funcionamento dos serviços mesmo em caso de falha de um dos nós.
+
+- **Monitoramento contínuo:**  
+  Implantação de **ferramentas de monitoramento proativo** (físico e virtual) que detectem falhas, anomalias de desempenho e possíveis ataques, possibilitando uma **resposta rápida e eficiente** antes que o problema se agrave.
+
+- **Escalonamento à disposição:**  
+  Manter um plano de escalonamento e máquinas reservas prontas para serem ativadas conforme a demanda. Dessa forma, é possível aumentar rapidamente a capacidade da aplicação ou substituir nós em caso de falha, garantindo a continuidade dos serviços sem interrupções.
+
+## Política de Backup
+Iriamos realizar backups diarios em horarios predeterminados, em localizações geograficamente com uma distancia minima de 100km dos servidores atuais
+
+
+
+
+
+## Estratégia de Alta Disponibilidade (HA)
+
+- **Redundância geográfica:**  
+  Serviços distribuídos em **múltiplas zonas de disponibilidade**, com replicação ativa/ativa ou ativa/passiva de componentes críticos.
+- **Load Balancer:**  
+  Utilização de **balanceadores de carga** para distribuir o tráfego entre diferentes servidores, garantindo que a aplicação suporte um volume maior de acessos e seja facilmente escalonável, além de aumentar a disponibilidade e tolerância a falhas.
+- **Queues:**  
+  Caso a demanda ultrapasse a capacidade de processamento, o sistema deve ser capaz de colocar as requisições em uma fila, garantindo que todas sejam atendidas assim que houver recursos disponíveis. Isso evita sobrecargas, mantém a estabilidade do sistema e assegura o atendimento de todas as solicitações mesmo durante picos de acesso.
