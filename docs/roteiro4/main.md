@@ -112,6 +112,8 @@ terraform apply
 
 ## Exercicios
 ### Exercício 2
+![Configuração do projeto - Exercício 2](img/e.jpg)
+*Figura 1: aba Identy projects no OpenStack..*
 
 
 ---
