@@ -747,9 +747,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#acoes-prioritarias-para-recuperacao-em-caso-de-desastres" class="md-nav__link">
+  <a href="#plano-de-acoes-prioritarias-para-recuperacao-em-caso-de-desastres" class="md-nav__link">
     <span class="md-ellipsis">
-      Ações Prioritárias para Recuperação em Caso de Desastres
+      Plano de Ações Prioritárias para Recuperação em Caso de Desastres
     </span>
   </a>
   
@@ -1087,9 +1087,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#acoes-prioritarias-para-recuperacao-em-caso-de-desastres" class="md-nav__link">
+  <a href="#plano-de-acoes-prioritarias-para-recuperacao-em-caso-de-desastres" class="md-nav__link">
     <span class="md-ellipsis">
-      Ações Prioritárias para Recuperação em Caso de Desastres
+      Plano de Ações Prioritárias para Recuperação em Caso de Desastres
     </span>
   </a>
   
@@ -1283,27 +1283,36 @@ Optaríamos por implementar um sistema em cloud pública, pois inicialmente apre
 <li><strong>Ataques cibernéticos:</strong> Ações como <strong>DDoS, injeções de SQL, phishing</strong> e malwares representam riscos severos à <strong>disponibilidade, integridade e confidencialidade</strong> do sistema e dos dados armazenados.</li>
 </ul>
 <hr />
-<h2 id="acoes-prioritarias-para-recuperacao-em-caso-de-desastres">Ações Prioritárias para Recuperação em Caso de Desastres</h2>
-<ul>
+<h2 id="plano-de-acoes-prioritarias-para-recuperacao-em-caso-de-desastres">Plano de Ações Prioritárias para Recuperação em Caso de Desastres</h2>
+<p><strong>Plano de Ação:</strong></p>
+<ol>
+<li><strong>Se ocorrer perda de dados ou corrupção de arquivos:</strong></li>
 <li>
-<p><strong>Backups de dados:</strong><br />
-  Realização de <strong>backups regulares e automáticos</strong>, armazenados em <strong>locais seguros, criptografados e geograficamente distantes (mínimo de 100 km)</strong> do datacenter principal, garantindo proteção contra desastres físicos de grande escala.</p>
+<p>Acionar imediatamente o processo de restauração a partir dos <strong>backups regulares e automáticos</strong>, armazenados em locais seguros, criptografados e a pelo menos 100 km do datacenter principal.</p>
 </li>
 <li>
-<p><strong>Balanceamento de carga (Load Balancer):</strong><br />
-  Implementação de <strong>balanceadores de carga</strong> para distribuir o tráfego de forma inteligente entre múltiplos servidores, prevenindo sobrecarga e mantendo o funcionamento dos serviços mesmo em caso de falha de um dos nós.</p>
+<p><strong>Se houver sobrecarga ou falha em um servidor:</strong></p>
 </li>
 <li>
-<p><strong>Monitoramento contínuo:</strong><br />
-  Implantação de <strong>ferramentas de monitoramento proativo</strong> (físico e virtual) que detectem falhas, anomalias de desempenho e possíveis ataques, possibilitando uma <strong>resposta rápida e eficiente</strong> antes que o problema se agrave.</p>
+<p>Ativar o <strong>balanceador de carga</strong> para redistribuir o tráfego entre os servidores disponíveis, garantindo a continuidade do serviço e evitando interrupções.</p>
 </li>
 <li>
-<p><strong>Escalonamento à disposição:</strong><br />
-  Manter um plano de escalonamento com máquinas reservas localizadas em diferentes regiões, prontas para serem ativadas conforme a demanda. Assim, é possível aumentar rapidamente a capacidade da aplicação ou substituir nós em caso de falha ou indisponibilidade, garantindo a continuidade dos serviços sem interrupções.</p>
+<p><strong>Se for detectada falha, anomalia de desempenho ou ataque:</strong></p>
 </li>
-</ul>
+<li>Utilizar as <strong>ferramentas de monitoramento proativo</strong> para identificar rapidamente o problema.</li>
+<li>
+<p>Acionar a equipe responsável para resposta imediata e mitigação do incidente.</p>
+</li>
+<li>
+<p><strong>Se um nó ou servidor ficar indisponível:</strong></p>
+</li>
+<li>Acionar o plano de <strong>escalonamento</strong>, ativando máquinas reservas localizadas em diferentes regiões para substituir ou complementar os recursos afetados.</li>
+<li>Garantir que a aplicação continue disponível e sem interrupções perceptíveis para o usuário.</li>
+</ol>
+<p><strong>Observação:</strong><br />
+Todas as ações devem ser documentadas e revisadas periodicamente para garantir a eficácia do plano de recuperação e a rápida resposta a qualquer incidente.</p>
 <h2 id="politica-de-backup">Política de Backup</h2>
-<p>Iriamos realizar backups diarios em horarios predeterminados, em localizações geograficamente com uma distancia minima de 100km dos servidores atuais</p>
+<p>Iriamos realizar backups diarios em horarios predeterminados, em servidores de localizações geograficamente com uma distancia minima de 100km dos servidores atuais</p>
 <h2 id="estrategia-de-alta-disponibilidade-ha">Estratégia de Alta Disponibilidade (HA)</h2>
 <ul>
 <li><strong>Redundância geográfica:</strong><br />
