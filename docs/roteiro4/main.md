@@ -192,20 +192,30 @@ Além disso, o time de DevOps atua na criação de pipelines de integração con
 
 ---
 
-## Ações Prioritárias para Recuperação em Caso de Desastres
+## Plano de Ações Prioritárias para Recuperação em Caso de Desastres
 
-- **Backups de dados:**  
-  Realização de **backups regulares e automáticos**, armazenados em **locais seguros, criptografados e geograficamente distantes (mínimo de 100 km)** do datacenter principal, garantindo proteção contra desastres físicos de grande escala.
 
-- **Balanceamento de carga (Load Balancer):**  
-  Implementação de **balanceadores de carga** para distribuir o tráfego de forma inteligente entre múltiplos servidores, prevenindo sobrecarga e mantendo o funcionamento dos serviços mesmo em caso de falha de um dos nós.
+**Plano de Ação:**
 
-- **Monitoramento contínuo:**  
-  Implantação de **ferramentas de monitoramento proativo** (físico e virtual) que detectem falhas, anomalias de desempenho e possíveis ataques, possibilitando uma **resposta rápida e eficiente** antes que o problema se agrave.
+1. **Se ocorrer perda de dados ou corrupção de arquivos:**
+   - Acionar imediatamente o processo de restauração a partir dos **backups regulares e automáticos**, armazenados em locais seguros, criptografados e a pelo menos 100 km do datacenter principal.
 
-- **Escalonamento à disposição:**  
-  Manter um plano de escalonamento com máquinas reservas localizadas em diferentes regiões, prontas para serem ativadas conforme a demanda. Assim, é possível aumentar rapidamente a capacidade da aplicação ou substituir nós em caso de falha ou indisponibilidade, garantindo a continuidade dos serviços sem interrupções.
+2. **Se houver sobrecarga ou falha em um servidor:**
+   - Ativar o **balanceador de carga** para redistribuir o tráfego entre os servidores disponíveis, garantindo a continuidade do serviço e evitando interrupções.
 
+3. **Se for detectada falha, anomalia de desempenho ou ataque:**
+   - Utilizar as **ferramentas de monitoramento proativo** para identificar rapidamente o problema.
+   - Acionar a equipe responsável para resposta imediata e mitigação do incidente.
+
+
+4. **Se um nó ou servidor ficar indisponível:**
+   - Acionar o plano de **escalonamento**, ativando máquinas reservas localizadas em diferentes regiões para substituir ou complementar os recursos afetados.
+   - Garantir que a aplicação continue disponível e sem interrupções perceptíveis para o usuário.
+
+  
+
+**Observação:**  
+Todas as ações devem ser documentadas e revisadas periodicamente para garantir a eficácia do plano de recuperação e a rápida resposta a qualquer incidente.
 ## Política de Backup
 Iriamos realizar backups diarios em horarios predeterminados, em localizações geograficamente com uma distancia minima de 100km dos servidores atuais
 
