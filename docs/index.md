@@ -19,7 +19,7 @@ Vitor Tanaka
 - [x] Roteiro 2
 - [x] Roteiro 3
 - [x] Roteiro 4
-- [In progress ] Projeto
+- [x] Projeto
 
 
 ## Referências

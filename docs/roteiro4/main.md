@@ -52,7 +52,7 @@ terraform {
 
 provider "openstack" {
   region    = "RegionOne"
-  user_name = "Ian"
+  user_name = "Ian"   
   password  = "123"
   auth_url  = "https://172.16.0.31:5000/v3"
   insecure  = true
@@ -217,7 +217,7 @@ Além disso, o time de DevOps atua na criação de pipelines de integração con
 **Observação:**  
 Todas as ações devem ser documentadas e revisadas periodicamente para garantir a eficácia do plano de recuperação e a rápida resposta a qualquer incidente.
 ## Política de Backup
-Iriamos realizar backups diarios em horarios predeterminados, em localizações geograficamente com uma distancia minima de 100km dos servidores atuais
+Iriamos realizar backups diarios em horarios predeterminados, em servidores de localizações geograficamente com uma distancia minima de 100km dos servidores atuais
 
 
 
